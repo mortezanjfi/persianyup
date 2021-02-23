@@ -1,0 +1,43 @@
+# what is this?
+
+Persian Yup-Schema for Formik!
+
+# installation
+
+`npm i persianform`
+`yarn add persianform`
+
+Then..
+
+```
+import persianYup from 'persianyup'
+import { Formik } from 'formik
+
+const schema = persianYup([
+        "isMobilePhone",
+        "isHomePhone",
+        "isPostalCode",
+        "isGpa",
+        "isNationalCode",
+        "isAddress",
+        "isSheba",
+        "isCardNumber",
+        "isFullName",
+        "isFirstName",
+        "isLastName",
+        "isUserName",
+        "isFatherName",
+        "isDate",
+        "isSsn",
+        "isCity",
+        "isValidFile"
+    ])
+
+<Formik validationSchema={schema}>
+    ...
+</Formik>
+```
+
+# option
+
+- you can choose each validate string that you want ()
