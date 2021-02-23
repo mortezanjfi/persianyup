@@ -2,6 +2,8 @@
 
 Persian Yup-Schema for Formik!
 
+- This is an useful object for persian form validation with yup and formik
+
 # installation
 
 `npm i persianform`

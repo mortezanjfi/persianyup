@@ -1,0 +1,48 @@
+{
+  "name": "persianyup",
+  "version": "1.0.0",
+  "description": "This is an useful object for persian form validation with yup and formik",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortezanjfi/persianyup.git"
+  },
+  "keywords": [
+    "persian",
+    "yup",
+    "persianyup",
+    "persian",
+    "formik",
+    "persianformik",
+    "formik",
+    "yup",
+    "yupschema",
+    "schema",
+    "formikschema",
+    "formik",
+    "schema",
+    "yupobject",
+    "yup",
+    "object",
+    "formikobject",
+    "fromik",
+    "object",
+    "persian-yup",
+    "yup-persian",
+    "persian-formik",
+    "formik-persian"
+  ],
+  "author": "Morteza Najafi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mortezanjfi/persianyup/issues"
+  },
+  "dependencies": {
+    "yup": "^0.32.9",
+    "persianform": "^1.2.4"
+  },
+  "homepage": "https://github.com/mortezanjfi/persianyup#readme"
+}
