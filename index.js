@@ -180,7 +180,7 @@ const shapes = {
   isValidFile: Yup.string().test(
     "isValidFile",
     messageValidate("file", "256", "انتخاب فایل"),
-    (isValidFile) => persianform.isValidateFile(isValidFile)
+    (isValidFile) => persianform.isValidFile(isValidFile)
   ),
 
   // Requirement
@@ -357,7 +357,7 @@ const shapes = {
     .test(
       "isValidFile",
       messageValidate("file", "256", "انتخاب فایل"),
-      (isValidFile) => persianform.isValidateFile(isValidFile)
+      (isValidFile) => persianform.isValidFile(isValidFile)
     ),
 };
 
