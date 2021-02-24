@@ -32,7 +32,27 @@ const schema = persianYup([
         "isDate",
         "isSsn",
         "isCity",
-        "isValidFile"
+        "isValidFile",
+
+        //required
+
+        "isMobilePhoneRequired",
+        "isHomePhoneRequired",
+        "isPostalCodeRequired",
+        "isGpaRequired",
+        "isNationalCodeRequired",
+        "isAddressRequired",
+        "isShebaRequired",
+        "isCardNumberRequired",
+        "isFullNameRequired",
+        "isFirstNameRequired",
+        "isLastNameRequired",
+        "isUserNameRequired",
+        "isFatherNameRequired",
+        "isDateRequired",
+        "isSsnRequired",
+        "isCityRequired",
+        "isValidFileRequired",
     ])
 
 <Formik validationSchema={schema}>
