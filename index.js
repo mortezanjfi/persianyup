@@ -72,8 +72,10 @@ const shapes = {
         persianform.isNationalCode(isNationalCode);
       }
     )
-    .test("isNationalCode", messageValidate("repeat"), (isNationalCode) =>
-      persianform.isDuplicate(isNationalCode)
+    .test(
+      "isNationalCode",
+      messageValidate("repeat"),
+      (isNationalCode) => !persianform.isDuplicate(isNationalCode)
     ),
 
   isAddress: Yup.string()
@@ -82,8 +84,10 @@ const shapes = {
     .test("isAddress", messageValidate("persian"), (isAddress) =>
       persianform.isPersian(isAddress)
     )
-    .test("isAddress", messageValidate("repeat"), (isAddress) =>
-      persianform.isDuplicate(isAddress)
+    .test(
+      "isAddress",
+      messageValidate("repeat"),
+      (isAddress) => !persianform.isDuplicate(isAddress)
     )
     .test("isAddress", messageValidate("matches", "آدرس"), (isAddress) =>
       persianform.isAddress(isAddress)
@@ -95,8 +99,10 @@ const shapes = {
     .test("isSheba", messageValidate("wrong", "شماره شبا"), (isSheba) => {
       persianform.isSheba(isSheba);
     })
-    .test("isSheba", messageValidate("repeat"), (isSheba) =>
-      persianform.isDuplicate(isSheba)
+    .test(
+      "isSheba",
+      messageValidate("repeat"),
+      (isSheba) => !persianform.isDuplicate(isSheba)
     ),
 
   isCardNumber: Yup.string()
@@ -109,8 +115,10 @@ const shapes = {
         persianform.isCardNumber(isCardNumber);
       }
     )
-    .test("isCardNumber", messageValidate("repeat"), (isCardNumber) =>
-      persianform.isDuplicate(isCardNumber)
+    .test(
+      "isCardNumber",
+      messageValidate("repeat"),
+      (isCardNumber) => !persianform.isDuplicate(isCardNumber)
     ),
 
   isFullName: Yup.string()
@@ -119,8 +127,10 @@ const shapes = {
     .test("fullName", messageValidate("persian"), (fullName) =>
       persianform.isPersian(fullName)
     )
-    .test("fullName", messageValidate("repeat"), (fullName) =>
-      persianform.isDuplicate(fullName)
+    .test(
+      "fullName",
+      messageValidate("repeat"),
+      (fullName) => !persianform.isDuplicate(fullName)
     ),
 
   isFirstName: Yup.string()
@@ -129,8 +139,10 @@ const shapes = {
     .test("firstName", messageValidate("persian"), (firstName) =>
       persianform.isPersian(firstName)
     )
-    .test("firstName", messageValidate("repeat"), (firstName) =>
-      persianform.isDuplicate(firstName)
+    .test(
+      "firstName",
+      messageValidate("repeat"),
+      (firstName) => !persianform.isDuplicate(firstName)
     ),
 
   isLastName: Yup.string()
@@ -139,8 +151,10 @@ const shapes = {
     .test("lastName", messageValidate("persian"), (lastName) =>
       persianform.isPersian(lastName)
     )
-    .test("lastName", messageValidate("repeat"), (lastName) =>
-      persianform.isDuplicate(lastName)
+    .test(
+      "lastName",
+      messageValidate("repeat"),
+      (lastName) => !persianform.isDuplicate(lastName)
     ),
 
   isUserName: Yup.string()
@@ -149,8 +163,10 @@ const shapes = {
     .test("userName", messageValidate("english"), (userName) =>
       persianform.isEnglish(userName)
     )
-    .test("userName", messageValidate("repeat"), (userName) =>
-      persianform.isDuplicate(userName)
+    .test(
+      "userName",
+      messageValidate("repeat"),
+      (userName) => !persianform.isDuplicate(userName)
     ),
 
   isFatherName: Yup.string()
@@ -159,8 +175,10 @@ const shapes = {
     .test("fatherName", messageValidate("matches", "نام پدر"), (fatherName) =>
       persianform.isPersian(fatherName)
     )
-    .test("fatherName", messageValidate("matches", "نام پدر"), (fatherName) =>
-      persianform.isDuplicate(fatherName)
+    .test(
+      "fatherName",
+      messageValidate("matches", "نام پدر"),
+      (fatherName) => !persianform.isDuplicate(fatherName)
     ),
 
   isDate: Yup.string().required(messageValidate("required", "تاریخ تولد")),
@@ -173,8 +191,10 @@ const shapes = {
     .test("isCity", messageValidate("matches", "اسم شهر"), (isCity) =>
       persianform.isPersian(isCity)
     )
-    .test("isCity", messageValidate("matches", "اسم شهر"), (isCity) =>
-      persianform.isDuplicate(isCity)
+    .test(
+      "isCity",
+      messageValidate("matches", "اسم شهر"),
+      (isCity) => !persianform.isDuplicate(isCity)
     ),
 
   isValidFile: Yup.string().test(
@@ -234,8 +254,10 @@ const shapes = {
         persianform.isNationalCode(isNationalCode);
       }
     )
-    .test("isNationalCode", messageValidate("repeat"), (isNationalCode) =>
-      persianform.isDuplicate(isNationalCode)
+    .test(
+      "isNationalCode",
+      messageValidate("repeat"),
+      (isNationalCode) => !persianform.isDuplicate(isNationalCode)
     ),
 
   isAddressRequired: Yup.string()
@@ -245,8 +267,10 @@ const shapes = {
     .test("isAddress", messageValidate("persian"), (isAddress) =>
       persianform.isPersian(isAddress)
     )
-    .test("isAddress", messageValidate("repeat"), (isAddress) =>
-      persianform.isDuplicate(isAddress)
+    .test(
+      "isAddress",
+      messageValidate("repeat"),
+      (isAddress) => !persianform.isDuplicate(isAddress)
     )
     .test("isAddress", messageValidate("matches", "آدرس"), (isAddress) =>
       persianform.isAddress(isAddress)
@@ -259,8 +283,10 @@ const shapes = {
     .test("isSheba", messageValidate("wrong", "شماره شبا"), (isSheba) => {
       persianform.isSheba(isSheba);
     })
-    .test("isSheba", messageValidate("repeat"), (isSheba) =>
-      persianform.isDuplicate(isSheba)
+    .test(
+      "isSheba",
+      messageValidate("repeat"),
+      (isSheba) => !persianform.isDuplicate(isSheba)
     ),
 
   isCardNumberRequired: Yup.string()
@@ -274,8 +300,10 @@ const shapes = {
         persianform.isCardNumber(isCardNumber);
       }
     )
-    .test("isCardNumber", messageValidate("repeat"), (isCardNumber) =>
-      persianform.isDuplicate(isCardNumber)
+    .test(
+      "isCardNumber",
+      messageValidate("repeat"),
+      (isCardNumber) => !persianform.isDuplicate(isCardNumber)
     ),
 
   isFullNameRequired: Yup.string()
@@ -285,8 +313,10 @@ const shapes = {
     .test("fullName", messageValidate("persian"), (fullName) =>
       persianform.isPersian(fullName)
     )
-    .test("fullName", messageValidate("repeat"), (fullName) =>
-      persianform.isDuplicate(fullName)
+    .test(
+      "fullName",
+      messageValidate("repeat"),
+      (fullName) => !persianform.isDuplicate(fullName)
     ),
 
   isFirstNameRequired: Yup.string()
@@ -296,8 +326,10 @@ const shapes = {
     .test("firstName", messageValidate("persian"), (firstName) =>
       persianform.isPersian(firstName)
     )
-    .test("firstName", messageValidate("repeat"), (firstName) =>
-      persianform.isDuplicate(firstName)
+    .test(
+      "firstName",
+      messageValidate("repeat"),
+      (firstName) => !persianform.isDuplicate(firstName)
     ),
 
   isLastNameRequired: Yup.string()
@@ -307,8 +339,10 @@ const shapes = {
     .test("lastName", messageValidate("persian"), (lastName) =>
       persianform.isPersian(lastName)
     )
-    .test("lastName", messageValidate("repeat"), (lastName) =>
-      persianform.isDuplicate(lastName)
+    .test(
+      "lastName",
+      messageValidate("repeat"),
+      (lastName) => !persianform.isDuplicate(lastName)
     ),
 
   isUserNameRequired: Yup.string()
@@ -318,8 +352,10 @@ const shapes = {
     .test("userName", messageValidate("english"), (userName) =>
       persianform.isEnglish(userName)
     )
-    .test("userName", messageValidate("repeat"), (userName) =>
-      persianform.isDuplicate(userName)
+    .test(
+      "userName",
+      messageValidate("repeat"),
+      (userName) => !persianform.isDuplicate(userName)
     ),
 
   isFatherNameRequired: Yup.string()
@@ -329,8 +365,10 @@ const shapes = {
     .test("fatherName", messageValidate("matches", "نام پدر"), (fatherName) =>
       persianform.isPersian(fatherName)
     )
-    .test("fatherName", messageValidate("matches", "نام پدر"), (fatherName) =>
-      persianform.isDuplicate(fatherName)
+    .test(
+      "fatherName",
+      messageValidate("matches", "نام پدر"),
+      (fatherName) => !persianform.isDuplicate(fatherName)
     ),
 
   isDateRequired: Yup.string().required(
@@ -348,8 +386,10 @@ const shapes = {
     .test("isCity", messageValidate("matches", "اسم شهر"), (isCity) =>
       persianform.isPersian(isCity)
     )
-    .test("isCity", messageValidate("matches", "اسم شهر"), (isCity) =>
-      persianform.isDuplicate(isCity)
+    .test(
+      "isCity",
+      messageValidate("matches", "اسم شهر"),
+      (isCity) => !persianform.isDuplicate(isCity)
     ),
 
   isValidFileRequired: Yup.string()
