@@ -33,6 +33,8 @@ const schema = persianYup([
         "isSsn",
         "isCity",
         "isValidFile",
+        "isVim",
+        "isBarcode"
     ])
 
 <Formik validationSchema={schema}>

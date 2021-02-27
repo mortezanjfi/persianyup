@@ -4,9 +4,9 @@ import * as persianform from "persianform";
 const messageValidate = (type = "matches", message = "ورودی", object = "") => {
   switch (type) {
     case "persian":
-      return `فقط حروف فارسی وارد نمایید(یک فاصله بین حروف)`;
+      return `فقط حروف فارسی وارد نمایید`;
     case "english":
-      return `فقط حروف انگلیسی وارد نمایید(یک فاصله بین حروف)`;
+      return `فقط حروف انگلیسی وارد نمایید`;
     case "repeat":
       return `لطفا کارکتر های تکراری وارد نکنید!!`;
     case "required":
@@ -139,7 +139,7 @@ const shapes = {
       (isFullName) => !persianform.isDuplicate(isFullName)
     )
     .min(3, messageValidate("min", "نام و نام خانوادگی", "3"))
-    .max(50, messageValidate("max", "نام و نام خانوادگی", "50"))
+    .max(40, messageValidate("max", "نام و نام خانوادگی", "50"))
     .required(messageValidate("required", "نام و نام خانوادگی")),
 
   isFirstName: Yup.string()
@@ -152,7 +152,7 @@ const shapes = {
       (isFirstName) => !persianform.isDuplicate(isFirstName)
     )
     .min(3, messageValidate("min", "نام", "3"))
-    .max(25, messageValidate("max", "نام", "25"))
+    .max(20, messageValidate("max", "نام", "25"))
     .required(messageValidate("required", "نام")),
 
   isLastName: Yup.string()
@@ -177,8 +177,8 @@ const shapes = {
       messageValidate("repeat"),
       (isUserName) => !persianform.isDuplicate(isUserName)
     )
-    .min(8, messageValidate("min", "نام کاربری", "8"))
-    .max(20, messageValidate("max", "نام کاربری", "20"))
+    .min(6, messageValidate("min", "نام کاربری", "8"))
+    .max(16, messageValidate("max", "نام کاربری", "20"))
     .required(messageValidate("required", "نام کاربری")),
 
   isFatherName: Yup.string()
@@ -193,7 +193,7 @@ const shapes = {
       (isFatherName) => !persianform.isDuplicate(isFatherName)
     )
     .min(3, messageValidate("min", "نام پدر", "3"))
-    .max(25, messageValidate("max", "نام پدر", "25"))
+    .max(15, messageValidate("max", "نام پدر", "25"))
     .required(messageValidate("required", "نام پدر")),
 
   isDate: Yup.string().required(messageValidate("required", "تاریخ تولد")),
@@ -212,16 +212,29 @@ const shapes = {
       (isCity) => !persianform.isDuplicate(isCity)
     )
     .min(2, messageValidate("min", "اسم شهر", "2"))
-    .max(80, messageValidate("max", "اسم شهر", "80"))
+    .max(25, messageValidate("max", "اسم شهر", "25"))
     .required(messageValidate("required", "اسم شهر")),
 
   isValidFile: Yup.string()
     .test(
       "isValidFile",
-      messageValidate("file", "256", "انتخاب فایل"),
+      messageValidate("isFile", "256", "انتخاب فایل"),
       (isValidFile) => persianform.isValidFile(isValidFile)
     )
     .required(messageValidate("required", "انتخاب فایل")),
+
+  isBarCode: Yup.string()
+    .required("required", "بارکد")
+    .min(2, messageValidate("min", "بارکد", "2"))
+    .max(8, messageValidate("max", "بارکد", "8")),
+
+  isVim: Yup.string()
+    .test("isVim", messageValidate("english"), (isVim) =>
+      persianform.isEnglish(isVim)
+    )
+    .required("required", "بارکد")
+    .min(10, messageValidate("min", "بارکد", "10"))
+    .max(16, messageValidate("max", "بارکد", "16")),
 };
 
 const persianYup = (...params) => {
