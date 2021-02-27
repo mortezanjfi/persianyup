@@ -4,7 +4,7 @@ Persian Yup-Schema for Formik!
 
 - This is an useful object for persian form validation with yup and formik
 
-# installation
+# Installation
 
 `npm i persianform`
 `yarn add persianform`
@@ -33,26 +33,6 @@ const schema = persianYup([
         "isSsn",
         "isCity",
         "isValidFile",
-
-        //required
-
-        "isMobilePhoneRequired",
-        "isHomePhoneRequired",
-        "isPostalCodeRequired",
-        "isGpaRequired",
-        "isNationalCodeRequired",
-        "isAddressRequired",
-        "isShebaRequired",
-        "isCardNumberRequired",
-        "isFullNameRequired",
-        "isFirstNameRequired",
-        "isLastNameRequired",
-        "isUserNameRequired",
-        "isFatherNameRequired",
-        "isDateRequired",
-        "isSsnRequired",
-        "isCityRequired",
-        "isValidFileRequired",
     ])
 
 <Formik validationSchema={schema}>
@@ -60,6 +40,11 @@ const schema = persianYup([
 </Formik>
 ```
 
-# option
+# Options
 
 - you can choose each validate string that you want ()
+
+# Dependencies
+
+-yup
+-persianform
