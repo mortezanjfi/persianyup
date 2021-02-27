@@ -34,8 +34,8 @@ const shapes = {
       messageValidate("matches", "شماره همراه"),
       (isMobilePhone) => persianform.isMobilePhone(isMobilePhone)
     )
-    .min(11, messageValidate("exact", "11", "شماره همراه"))
-    .max(11, messageValidate("exact", "11", "شماره همراه"))
+    .min(10, messageValidate("exact", "11", "شماره همراه"))
+    .max(10, messageValidate("exact", "11", "شماره همراه"))
     .required(messageValidate("required", "شماره همراه")),
 
   isHomePhone: Yup.string()
