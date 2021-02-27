@@ -30,10 +30,9 @@ const messageValidate = (type = "matches", message = "ورودی", object = "") 
 const shapes = {
   isMobilePhone: Yup.string()
     .test(
-      "isMobilePhoneRequired",
+      "isMobilePhone",
       messageValidate("matches", "شماره همراه"),
-      (isMobilePhoneRequired) =>
-        persianform.isMobilePhone(isMobilePhoneRequired)
+      (isMobilePhone) => persianform.isMobilePhone(isMobilePhone)
     )
     .min(11, messageValidate("exact", "11", "شماره همراه"))
     .max(11, messageValidate("exact", "11", "شماره همراه"))
@@ -41,9 +40,9 @@ const shapes = {
 
   isHomePhone: Yup.string()
     .test(
-      "isHomePhoneRequired",
+      "isHomePhone",
       messageValidate("matches", "تلفن ثابت"),
-      (isHomePhoneRequired) => persianform.isHomePhone(isHomePhoneRequired)
+      (isHomePhone) => persianform.isHomePhone(isHomePhone)
     )
     .min(11, messageValidate("exact", "11", "تلفن ثابت"))
     .max(11, messageValidate("exact", "11", "تلفن ثابت"))
@@ -51,18 +50,16 @@ const shapes = {
 
   isPostalCode: Yup.string()
     .test(
-      "isPostalCodeRequired",
+      "isPostalCode",
       messageValidate("matches", "کد پستی"),
-      (isPostalCodeRequired) => persianform.isPostalCode(isPostalCodeRequired)
+      (isPostalCode) => persianform.isPostalCode(isPostalCode)
     )
     .min(10, messageValidate("exact", "10", "کد پستی"))
     .max(10, messageValidate("exact", "10", "کد پستی"))
     .required(messageValidate("required", "کد پستی")),
   isGpa: Yup.string()
-    .test(
-      "isGpaRequired",
-      messageValidate("matches", "معدل"),
-      (isGpaRequired) => persianform.isGpa(isGpaRequired)
+    .test("isGpa", messageValidate("matches", "معدل"), (isGpa) =>
+      persianform.isGpa(isGpa)
     )
     .min(1, messageValidate("exact", "1", "معدل"))
     .max(5, messageValidate("exact", "5", "معدل"))
@@ -70,55 +67,46 @@ const shapes = {
 
   isNationalCode: Yup.string()
     .test(
-      "isNationalCodeRequired",
+      "isNationalCode",
       messageValidate("wrong", "کد ملی"),
-      (isNationalCodeRequired) => {
-        let num = Number(isNationalCodeRequired);
+      (isNationalCode) => {
+        let num = Number(isNationalCode);
         return persianform.isNationalCode(num);
       }
     )
     .test(
-      "isNationalCodeRequired",
+      "isNationalCode",
       messageValidate("repeat"),
-      (isNationalCodeRequired) =>
-        !persianform.isDuplicate(isNationalCodeRequired)
+      (isNationalCode) => !persianform.isDuplicate(isNationalCode)
     )
     .min(10, messageValidate("exact", "10", "کد ملی"))
     .max(10, messageValidate("exact", "10", "کد ملی"))
     .required(messageValidate("required", "کد ملی")),
 
   isAddress: Yup.string()
-    .test(
-      "isAddressRequired",
-      messageValidate("persian"),
-      (isAddressRequired) => persianform.isPersian(isAddressRequired)
+    .test("isAddress", messageValidate("persian"), (isAddress) =>
+      persianform.isPersian(isAddress)
     )
     .test(
-      "isAddressRequired",
+      "isAddress",
       messageValidate("repeat"),
-      (isAddressRequired) => !persianform.isDuplicate(isAddressRequired)
+      (isAddress) => !persianform.isDuplicate(isAddress)
     )
-    .test(
-      "isAddressRequired",
-      messageValidate("matches", "آدرس"),
-      (isAddressRequired) => persianform.isAddress(isAddressRequired)
+    .test("isAddress", messageValidate("matches", "آدرس"), (isAddress) =>
+      persianform.isAddress(isAddress)
     )
     .min(5, messageValidate("min", "آدرس", "5"))
     .max(150, messageValidate("max", "آدرس", "150"))
     .required(messageValidate("required", "آدرس")),
 
   isSheba: Yup.string()
+    .test("isSheba", messageValidate("wrong", "شماره شبا"), (isSheba) => {
+      persianform.isSheba(isSheba);
+    })
     .test(
-      "isShebaRequired",
-      messageValidate("wrong", "شماره شبا"),
-      (isShebaRequired) => {
-        persianform.isSheba(isShebaRequired);
-      }
-    )
-    .test(
-      "isShebaRequired",
+      "isSheba",
       messageValidate("repeat"),
-      (isShebaRequired) => !persianform.isDuplicate(isShebaRequired)
+      (isSheba) => !persianform.isDuplicate(isSheba)
     )
     .min(24, messageValidate("exact", "24", "شماره شبا"))
     .max(24, messageValidate("exact", "24", "شماره شبا"))
@@ -126,76 +114,68 @@ const shapes = {
 
   isCardNumber: Yup.string()
     .test(
-      "isCardNumberRequired",
+      "isCardNumber",
       messageValidate("wrong", "شماره کارت"),
-      (isCardNumberRequired) => {
-        persianform.isCardNumber(isCardNumberRequired);
+      (isCardNumber) => {
+        persianform.isCardNumber(isCardNumber);
       }
     )
     .test(
-      "isCardNumberRequired",
+      "isCardNumber",
       messageValidate("repeat"),
-      (isCardNumberRequired) => !persianform.isDuplicate(isCardNumberRequired)
+      (isCardNumber) => !persianform.isDuplicate(isCardNumber)
     )
     .min(16, messageValidate("exact", "16", "شماره کارت"))
     .max(16, messageValidate("exact", "16", "شماره کارت"))
     .required(messageValidate("required", "شماره کارت")),
 
   isFullName: Yup.string()
-    .test(
-      "isFullNameRequired",
-      messageValidate("persian"),
-      (isFullNameRequired) => persianform.isPersian(isFullNameRequired)
+    .test("isFullName", messageValidate("persian"), (isFullName) =>
+      persianform.isPersian(isFullName)
     )
     .test(
-      "isFullNameRequired",
+      "isFullName",
       messageValidate("repeat"),
-      (isFullNameRequired) => !persianform.isDuplicate(isFullNameRequired)
+      (isFullName) => !persianform.isDuplicate(isFullName)
     )
     .min(3, messageValidate("min", "نام و نام خانوادگی", "3"))
     .max(50, messageValidate("max", "نام و نام خانوادگی", "50"))
     .required(messageValidate("required", "نام و نام خانوادگی")),
 
   isFirstName: Yup.string()
-    .test(
-      "isFirstNameRequired",
-      messageValidate("persian"),
-      (isFirstNameRequired) => persianform.isPersian(isFirstNameRequired)
+    .test("isFirstName", messageValidate("persian"), (isFirstName) =>
+      persianform.isPersian(isFirstName)
     )
     .test(
-      "isFirstNameRequired",
+      "isFirstName",
       messageValidate("repeat"),
-      (isFirstNameRequired) => !persianform.isDuplicate(isFirstNameRequired)
+      (isFirstName) => !persianform.isDuplicate(isFirstName)
     )
     .min(3, messageValidate("min", "نام", "3"))
     .max(25, messageValidate("max", "نام", "25"))
     .required(messageValidate("required", "نام")),
 
   isLastName: Yup.string()
-    .test(
-      "isLastNameRequired",
-      messageValidate("persian"),
-      (isLastNameRequired) => persianform.isPersian(isLastNameRequired)
+    .test("isLastName", messageValidate("persian"), (isLastName) =>
+      persianform.isPersian(isLastName)
     )
     .test(
-      "isLastNameRequired",
+      "isLastName",
       messageValidate("repeat"),
-      (isLastNameRequired) => !persianform.isDuplicate(isLastNameRequired)
+      (isLastName) => !persianform.isDuplicate(isLastName)
     )
     .min(3, messageValidate("min", "نام خانوادگی", "3"))
     .max(25, messageValidate("max", "نام خانوادگی", "25"))
     .required(messageValidate("required", "نام خانوادگی")),
 
   isUserName: Yup.string()
-    .test(
-      "isUserNameRequired",
-      messageValidate("english"),
-      (isUserNameRequired) => persianform.isEnglish(isUserNameRequired)
+    .test("isUserName", messageValidate("english"), (isUserName) =>
+      persianform.isEnglish(isUserName)
     )
     .test(
-      "isUserNameRequired",
+      "isUserName",
       messageValidate("repeat"),
-      (isUserNameRequired) => !persianform.isDuplicate(isUserNameRequired)
+      (isUserName) => !persianform.isDuplicate(isUserName)
     )
     .min(8, messageValidate("min", "نام کاربری", "8"))
     .max(20, messageValidate("max", "نام کاربری", "20"))
@@ -203,14 +183,14 @@ const shapes = {
 
   isFatherName: Yup.string()
     .test(
-      "isFatherNameRequired",
+      "isFatherName",
       messageValidate("matches", "نام پدر"),
-      (isFatherNameRequired) => persianform.isPersian(isFatherNameRequired)
+      (isFatherName) => persianform.isPersian(isFatherName)
     )
     .test(
-      "isFatherNameRequired",
+      "isFatherName",
       messageValidate("matches", "نام پدر"),
-      (isFatherNameRequired) => !persianform.isDuplicate(isFatherNameRequired)
+      (isFatherName) => !persianform.isDuplicate(isFatherName)
     )
     .min(3, messageValidate("min", "نام پدر", "3"))
     .max(25, messageValidate("max", "نام پدر", "25"))
@@ -223,15 +203,13 @@ const shapes = {
     .required(messageValidate("required", "شماره شناسنامه")),
 
   isCity: Yup.string()
-    .test(
-      "isCityRequired",
-      messageValidate("matches", "اسم شهر"),
-      (isCityRequired) => persianform.isPersian(isCityRequired)
+    .test("isCity", messageValidate("matches", "اسم شهر"), (isCity) =>
+      persianform.isPersian(isCity)
     )
     .test(
-      "isCityRequired",
+      "isCity",
       messageValidate("matches", "اسم شهر"),
-      (isCityRequired) => !persianform.isDuplicate(isCityRequired)
+      (isCity) => !persianform.isDuplicate(isCity)
     )
     .min(2, messageValidate("min", "اسم شهر", "2"))
     .max(80, messageValidate("max", "اسم شهر", "80"))
@@ -239,9 +217,9 @@ const shapes = {
 
   isValidFile: Yup.string()
     .test(
-      "isValidFileRequired",
+      "isValidFile",
       messageValidate("file", "256", "انتخاب فایل"),
-      (isValidFileRequired) => persianform.isValidFile(isValidFileRequired)
+      (isValidFile) => persianform.isValidFile(isValidFile)
     )
     .required(messageValidate("required", "انتخاب فایل")),
 };

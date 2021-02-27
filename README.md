@@ -40,6 +40,20 @@ const schema = persianYup([
 </Formik>
 ```
 
+# Example
+
+```
+isMobilePhone: Yup.string()
+    .test(
+      "isMobilePhone",
+      messageValidate("matches", "شماره همراه"),
+      (isMobilePhone) => persianform.isMobilePhone(isMobilePhone)
+    )
+    .min(11, messageValidate("exact", "11", "شماره همراه"))
+    .max(11, messageValidate("exact", "11", "شماره همراه"))
+    .required(messageValidate("required", "شماره همراه")),
+```
+
 # Options
 
 - you can choose each validate string that you want ()
