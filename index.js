@@ -65,7 +65,7 @@ const shapes = {
       (isGpaRequired) => persianform.isGpa(isGpaRequired)
     )
     .min(1, messageValidate("exact", "1", "معدل"))
-    .min(5, messageValidate("exact", "5", "معدل"))
+    .max(5, messageValidate("exact", "5", "معدل"))
     .required(messageValidate("required", "معدل")),
 
   isNationalCode: Yup.string()
