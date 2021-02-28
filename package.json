@@ -1,6 +1,6 @@
 {
   "name": "persianyup",
-  "version": "1.3.6",
+  "version": "1.4.6",
   "description": "This is an useful object for persian form validation with yup and formik",
   "main": "index.js",
   "scripts": {

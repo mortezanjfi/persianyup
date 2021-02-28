@@ -22,6 +22,11 @@ const schema = persianYup([
         "isGpa",
         "isNationalCode",
         "isAddress",
+        "isGpaLetter",
+        "isEducationFieldName",
+        "isUniversityName",
+        "isRadioButton",
+        "isCheckBox",
         "isSheba",
         "isCardNumber",
         "isFullName",
@@ -33,8 +38,18 @@ const schema = persianYup([
         "isSsn",
         "isCity",
         "isValidFile",
-        "isVim",
+        "isVin",
         "isBarcode"
+
+        <!-- Additional Items -->
+        "isAddress1",
+        "isAddress2",
+        "isUniversityName1",
+        "isUniversityName2",
+        "isEducationFieldName1",
+        "isEducationFieldName2",
+        "isValidFile1",
+        "isValidFile2",
     ])
 
 <Formik validationSchema={schema}>
@@ -42,7 +57,7 @@ const schema = persianYup([
 </Formik>
 ```
 
-# Example
+# Source Code Example
 
 ```
 isMobilePhone: Yup.string()
@@ -58,7 +73,7 @@ isMobilePhone: Yup.string()
 
 # Options
 
-- you can choose each validate string that you want ()
+- you can choose each validate you want
 
 # Dependencies
 
