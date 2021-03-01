@@ -378,16 +378,16 @@ const shapes = {
 
   isBarCode: Yup.string()
     .required("required", "بارکد")
-    .min(2, messageValidate("min", "بارکد", "2"))
-    .max(8, messageValidate("max", "بارکد", "8")),
+    .min(5, messageValidate("min", "بارکد", "5"))
+    .max(9, messageValidate("max", "بارکد", "9")),
 
   isVin: Yup.string()
     .test("isVin", messageValidate("english"), (isVin) =>
       persianform.isEnglish(isVin)
     )
-    .required("required", "بارکد")
-    .min(10, messageValidate("min", "بارکد", "10"))
-    .max(16, messageValidate("max", "بارکد", "16")),
+    .required("required", "vin")
+    .min(17, messageValidate("exact", "17", "vin"))
+    .max(17, messageValidate("exact", "17", "vin")),
 };
 
 const persianYup = (...params) => {
