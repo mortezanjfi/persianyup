@@ -44,8 +44,8 @@ const shapes = {
       messageValidate("matches", "تلفن ثابت"),
       (isHomePhone) => persianform.isHomePhone(isHomePhone)
     )
-    .min(11, messageValidate("exact", "11", "تلفن ثابت"))
-    .max(11, messageValidate("exact", "11", "تلفن ثابت"))
+    .min(10, messageValidate("exact", "11", "تلفن ثابت"))
+    .max(10, messageValidate("exact", "11", "تلفن ثابت"))
     .required(messageValidate("required", "تلفن ثابت")),
 
   isPostalCode: Yup.string()
@@ -364,7 +364,7 @@ const shapes = {
     .test(
       "isValidFile1",
       messageValidate("isFile", "256", "انتخاب فایل"),
-      (isValidFile1) => persianform.isValidFile1(isValidFile1)
+      (isValidFile1) => persianform.isValidFile(isValidFile1)
     )
     .required(messageValidate("required", "انتخاب فایل")),
 
@@ -372,7 +372,7 @@ const shapes = {
     .test(
       "isValidFile2",
       messageValidate("isFile", "256", "انتخاب فایل"),
-      (isValidFile2) => persianform.isValidFile2(isValidFile2)
+      (isValidFile2) => persianform.isValidFile(isValidFile2)
     )
     .required(messageValidate("required", "انتخاب فایل")),
 
