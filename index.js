@@ -378,7 +378,7 @@ const shapes = {
 
   isBarCode: Yup.string()
     .required("required", "بارکد")
-    .min(5, messageValidate("min", "بارکد", "5"))
+    .min(8, messageValidate("min", "بارکد", "8"))
     .max(9, messageValidate("max", "بارکد", "9")),
 
   isVin: Yup.string()
