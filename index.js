@@ -377,7 +377,7 @@ const shapes = {
     .required(messageValidate("required", "انتخاب فایل")),
 
   isBarCode: Yup.string()
-    .required("required", "بارکد")
+    .required(messageValidate("required", "بارکد"))
     .min(8, messageValidate("min", "بارکد", "8"))
     .max(9, messageValidate("max", "بارکد", "9")),
 
@@ -385,7 +385,7 @@ const shapes = {
     .test("isVin", messageValidate("english"), (isVin) =>
       persianform.isEnglish(isVin)
     )
-    .required("required", "vin")
+    .required(messageValidate("required", "vin"))
     .min(17, messageValidate("exact", "17", "vin"))
     .max(17, messageValidate("exact", "17", "vin")),
 };
