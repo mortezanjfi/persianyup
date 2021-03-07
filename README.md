@@ -19,6 +19,7 @@ const schema = persianYup([
         "isMobilePhone",
         "isHomePhone",
         "isPostalCode",
+        "isOtp",
         "isGpa",
         "isNationalCode",
         "isAddress",

@@ -28,7 +28,12 @@ const messageValidate = (type = "matches", message = "ورودی", object = "") 
   }
 };
 const shapes = {
-  isMobilePhone: Yup.string()
+  isOtp: Yup.string()
+    .min(6, messageValidate("exact", "6", "کد تایید"))
+    .max(6, messageValidate("exact", "6", "کد تایید"))
+    .required(messageValidate("required", "کد تایید")),
+
+  isMobilePhone: Yup.number()
     .test(
       "isMobilePhone",
       messageValidate("matches", "شماره همراه"),
