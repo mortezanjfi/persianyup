@@ -74,10 +74,7 @@ const shapes = {
     .test(
       "isNationalCode",
       messageValidate("wrong", "کد ملی"),
-      (isNationalCode) => {
-        let num = Number(isNationalCode);
-        return persianform.isNationalCode(num);
-      }
+      (isNationalCode) => persianform.isNationalCode(isNationalCode)
     )
     .test(
       "isNationalCode",
