@@ -34,6 +34,7 @@ const schema = persianYup([
         "isFirstName",
         "isLastName",
         "isUserName",
+        "isPassword",
         "isFatherName",
         "isDate",
         "isSsn",
