@@ -23,6 +23,8 @@ const messageValidate = (type = "matches", message = "ورودی", object = "") 
       return `${message} شما باید کمتر از ${object} حرف باشد`;
     case "exact":
       return `${object} شما باید ${message} حرف باشد`;
+    case "password":
+      return `رمز عبور باید دارای حروف کوچک، بزرگ، عدد و کارکتر باشد!`;
     default:
       break;
   }
@@ -316,6 +318,13 @@ const shapes = {
     .min(6, messageValidate("min", "نام کاربری", "8"))
     .max(16, messageValidate("max", "نام کاربری", "20")),
 
+  isPassword: Yup.string()
+    .required(messageValidate("required", "رمز عبور"))
+    .min(8, messageValidate("min", "رمز عبور", "8"))
+    .max(30, messageValidate("max", "رمز عبور", "30"))
+    .test("isPassword", messageValidate("isPassword"), (isPassword) =>
+      persianform.isPassword(isPassword)
+    ),
   isFatherName: Yup.string()
     .required(messageValidate("required", "نام پدر"))
     .test(
@@ -331,7 +340,9 @@ const shapes = {
     .min(3, messageValidate("min", "نام پدر", "3"))
     .max(15, messageValidate("max", "نام پدر", "25")),
 
-  isDate: Yup.string().required(messageValidate("required", "تاریخ تولد")),
+  isBirthDate: Yup.string().required(messageValidate("required", "تاریخ تولد")),
+  isDate: Yup.string().required(messageValidate("required", "تاریخ")),
+  isDate2: Yup.string().required(messageValidate("required", "تاریخ")),
 
   isRadioButton: Yup.string().required(messageValidate("required", "")),
 
