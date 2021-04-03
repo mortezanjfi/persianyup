@@ -45,6 +45,26 @@ const shapes = {
       (isMobilePhone) => persianform.isMobilePhone(isMobilePhone)
     ),
 
+  isEmail: Yup.string()
+    .required(messageValidate("required", "ایمیل"))
+    .test("isEmail", messageValidate("english"), (isEmail) =>
+      persianform.isEnglish(isEmail)
+    )
+    .test("isEmail", messageValidate("matches", "شماره همراه"), (isEmail) =>
+      persianform.isEmail(isEmail)
+    ),
+
+  isNationalCardSerial: Yup.string()
+    .required(messageValidate("required", "سریال پشت کارت ملی"))
+    .min(10, messageValidate("exact", "10", "سریال پشت کارت ملی"))
+    .max(10, messageValidate("exact", "10", "سریال پشت کارت ملی"))
+    .test("isEmail", messageValidate("english"), (isEmail) =>
+      persianform.isEnglish(isEmail)
+    )
+    .test("isEmail", messageValidate("matches", "شماره همراه"), (isEmail) =>
+      persianform.isEmail(isEmail)
+    ),
+
   isHomePhone: Yup.string()
     .required(messageValidate("required", "تلفن ثابت"))
     .min(10, messageValidate("exact", "11", "تلفن ثابت"))
