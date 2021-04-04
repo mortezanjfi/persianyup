@@ -67,8 +67,8 @@ const shapes = {
 
   isHomePhone: Yup.string()
     .required(messageValidate("required", "تلفن ثابت"))
-    .min(10, messageValidate("exact", "11", "تلفن ثابت"))
-    .max(10, messageValidate("exact", "11", "تلفن ثابت"))
+    .min(11, messageValidate("exact", "11", "تلفن ثابت"))
+    .max(11, messageValidate("exact", "11", "تلفن ثابت"))
     .test(
       "isHomePhone",
       messageValidate("matches", "تلفن ثابت"),
