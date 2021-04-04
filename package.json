@@ -1,6 +1,6 @@
 {
   "name": "persianyup",
-  "version": "1.7.3",
+  "version": "1.7.4",
   "description": "This is an useful object for persian form validation with yup and formik",
   "main": "index.js",
   "scripts": {
@@ -41,7 +41,7 @@
     "url": "https://github.com/mortezanjfi/persianyup/issues"
   },
   "dependencies": {
-    "persianform": "^1.5.8",
+    "persianform": "^1.5.9",
     "yup": "^0.32.9"
   },
   "homepage": "https://github.com/mortezanjfi/persianyup#readme"
