@@ -52,9 +52,7 @@ const shapes = {
     .test("isEmail", messageValidate("english"), (isEmail) =>
       persianform.isEnglish(isEmail)
     )
-    .test("isEmail", messageValidate("matches", "شماره همراه"), (isEmail) =>
-      persianform.isEmail(isEmail)
-    ),
+    .email(messageValidate("matches", "ایمیل")),
 
   isNationalCardSerial: Yup.string()
     .required(messageValidate("required", "سریال پشت کارت ملی"))
