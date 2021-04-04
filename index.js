@@ -25,6 +25,8 @@ const messageValidate = (type = "matches", message = "ورودی", object = "") 
       return `${object} شما باید ${message} حرف باشد`;
     case "password":
       return `رمز عبور باید دارای حروف کوچک، بزرگ، عدد و کارکتر باشد!`;
+    case "choice":
+      return `لطفا یکی از موارد بالا را وارد نمایید!`;
     default:
       break;
   }
@@ -199,7 +201,7 @@ const shapes = {
     .max(40, messageValidate("max", "نام دانشگاه", "50")),
 
   isGpaLetter: Yup.string()
-    .required(messageValidate("required", "معدل به حروف"))
+    .required("لطفا معدل خود را به حروف وارد نمایید")
     .min(3, messageValidate("min", "معدل به حروف", "3"))
     .max(40, messageValidate("max", "معدل به حروف", "50"))
     .test("isGpaLetter", messageValidate("persian"), (isGpaLetter) =>
@@ -364,7 +366,7 @@ const shapes = {
   isDate: Yup.string().required(messageValidate("required", "تاریخ")),
   isDate2: Yup.string().required(messageValidate("required", "تاریخ")),
 
-  isRadioButton: Yup.string().required(messageValidate("required", "")),
+  isRadioButton: Yup.string().required(messageValidate("choice")),
 
   isCheckBox: Yup.bool().oneOf([true], messageValidate("required", "")),
 
