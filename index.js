@@ -78,12 +78,8 @@ const shapes = {
   isPostalCode: Yup.string()
     .required(messageValidate("required", "کد پستی"))
     .min(10, messageValidate("exact", "10", "کد پستی"))
-    .max(10, messageValidate("exact", "10", "کد پستی"))
-    .test(
-      "isPostalCode",
-      messageValidate("matches", "کد پستی"),
-      (isPostalCode) => persianform.isPostalCode(isPostalCode)
-    ),
+    .max(10, messageValidate("exact", "10", "کد پستی")),
+
   isGpa: Yup.string()
     .required(messageValidate("required", "معدل"))
     .min(1, messageValidate("exact", "1", "معدل"))
