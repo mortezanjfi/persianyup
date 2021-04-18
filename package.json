@@ -41,7 +41,7 @@
     "url": "https://github.com/mortezanjfi/persianyup/issues"
   },
   "dependencies": {
-    "persianform": "^1.5.9",
+    "persianform": "^1.6.1",
     "yup": "^0.32.9"
   },
   "homepage": "https://github.com/mortezanjfi/persianyup#readme"
