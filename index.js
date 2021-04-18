@@ -375,7 +375,7 @@ const shapes = {
   isCity: Yup.string()
     .required(messageValidate("required", "اسم شهر"))
     .test("isCity", messageValidate("matches", "اسم شهر"), (isCity) =>
-      persianform.isPersian(isCity)
+      persianform.isPersian(isCity, {isNumber =false})
     )
     .test(
       "isCity",
