@@ -203,7 +203,7 @@ const shapes = {
     .min(3, messageValidate("min", "معدل به حروف", "3"))
     .max(40, messageValidate("max", "معدل به حروف", "50"))
     .test("isGpaLetter", messageValidate("persian"), (isGpaLetter) =>
-      persianform.isPersian(isGpaLetter)
+      persianform.isPersian(isGpaLetter, {isNumber =false})
     )
     .test(
       "isGpaLetter",
