@@ -199,7 +199,7 @@ const shapes = {
     .min(3, messageValidate("min", "معدل به حروف", "3"))
     .max(40, messageValidate("max", "معدل به حروف", "50"))
     .test("isGpaLetter", messageValidate("persian"), (isGpaLetter) =>
-      persianform.isPersian(isGpaLetter, {isNumber =false})
+      persianform.isPersian(isGpaLetter, { isNumber: false })
     )
     .test(
       "isGpaLetter",
@@ -371,7 +371,7 @@ const shapes = {
   isCity: Yup.string()
     .required(messageValidate("required", "اسم شهر"))
     .test("isCity", messageValidate("matches", "اسم شهر"), (isCity) =>
-      persianform.isPersian(isCity, {isNumber =false})
+      persianform.isPersian(isCity, { isNumber: false })
     )
     .test(
       "isCity",
