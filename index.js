@@ -48,7 +48,7 @@ const shapes = {
     ),
 
   isEmail: Yup.string()
-    .required(messageValidate("required", "ایمیل"))
+    // .required(messageValidate("required", "ایمیل"))
     .test("isEmail", messageValidate("english"), (isEmail) =>
       persianform.isEnglish(isEmail)
     )
