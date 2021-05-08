@@ -49,9 +49,9 @@ const shapes = {
 
   isEmail: Yup.string()
     // .required(messageValidate("required", "ایمیل"))
-    .test("isEmail", messageValidate("english"), (isEmail) =>
-      persianform.isEnglish(isEmail)
-    )
+    // .test("isEmail", messageValidate("english"), (isEmail) =>
+    //   persianform.isEnglish(isEmail)
+    // )
     .email(messageValidate("matches", "ایمیل")),
 
   isNationalCardSerial: Yup.string()
