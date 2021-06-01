@@ -114,7 +114,7 @@ const shapes = {
       (isAddress) => !persianform.isDuplicate(isAddress)
     )
     .min(5, messageValidate("min", "آدرس", "5"))
-    .max(150, messageValidate("max", "آدرس", "150"))
+    .max(300, messageValidate("max", "آدرس", "300"))
     .test("isAddress", messageValidate("matches", "آدرس"), (isAddress) =>
       persianform.isAddress(isAddress)
     ),
@@ -130,7 +130,7 @@ const shapes = {
       (isAddress1) => !persianform.isDuplicate(isAddress1)
     )
     .min(5, messageValidate("min", "آدرس", "5"))
-    .max(150, messageValidate("max", "آدرس", "150"))
+    .max(300, messageValidate("max", "آدرس", "300"))
     .test("isAddress1", messageValidate("matches", "آدرس"), (isAddress1) =>
       persianform.isAddress(isAddress1)
     ),
@@ -146,7 +146,7 @@ const shapes = {
       (isAddress2) => !persianform.isDuplicate(isAddress2)
     )
     .min(5, messageValidate("min", "آدرس", "5"))
-    .max(150, messageValidate("max", "آدرس", "150"))
+    .max(300, messageValidate("max", "آدرس", "300"))
     .test("isAddress2", messageValidate("matches", "آدرس"), (isAddress2) =>
       persianform.isAddress(isAddress2)
     ),
