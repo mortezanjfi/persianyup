@@ -76,11 +76,10 @@ const shapes = {
     ),
 
   isFax: Yup.string()
-    .required(messageValidate("required", "تلفن ثابت"))
-    .min(11, messageValidate("exact", "11", "تلفن ثابت"))
-    .max(11, messageValidate("exact", "11", "تلفن ثابت"))
-    .test("isFax", messageValidate("matches", "تلفن ثابت"), (isFax) =>
-      persianform.isFax(isFax)
+    .min(11, messageValidate("exact", "11", "فکس"))
+    .max(11, messageValidate("exact", "11", "فکس"))
+    .test("isFax", messageValidate("matches", "فکس"), (isFax) =>
+      persianform.isHomePhone(isFax)
     ),
 
   isPostalCode: Yup.string()
