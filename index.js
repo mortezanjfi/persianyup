@@ -205,8 +205,8 @@ const shapes = {
 
   isGpaLetter: Yup.string()
     .required("لطفا معدل خود را به حروف وارد نمایید")
-    .min(3, messageValidate("min", "معدل به حروف", "3"))
-    .max(40, messageValidate("max", "معدل به حروف", "50"))
+    .min(2, messageValidate("min", "معدل به حروف", "2"))
+    .max(50, messageValidate("max", "معدل به حروف", "50"))
     .test("isGpaLetter", messageValidate("persian"), (isGpaLetter) =>
       persianform.isPersian(isGpaLetter, { isNumber: false })
     )
@@ -236,7 +236,8 @@ const shapes = {
     .test(
       "isEducationFieldName1",
       messageValidate("persian"),
-      (isEducationFieldName1) => persianform.isPersian(isEducationFieldName1)
+      (isEducationFieldName1) =>
+        persianform.isPersian(isEducationFieldName1, { isNumber: false })
     )
     .test(
       "isEducationFieldName1",
@@ -251,7 +252,8 @@ const shapes = {
     .test(
       "isEducationFieldName2",
       messageValidate("persian"),
-      (isEducationFieldName2) => persianform.isPersian(isEducationFieldName2)
+      (isEducationFieldName2) =>
+        persianform.isPersian(isEducationFieldName2, { isNumber: false })
     )
     .test(
       "isEducationFieldName2",
@@ -302,7 +304,7 @@ const shapes = {
       (isFullName) => !persianform.isDuplicate(isFullName)
     )
     .min(3, messageValidate("min", "نام و نام خانوادگی", "3"))
-    .max(40, messageValidate("max", "نام و نام خانوادگی", "50")),
+    .max(150, messageValidate("max", "نام و نام خانوادگی", "150")),
 
   isFirstName: Yup.string()
     .required(messageValidate("required", "نام"))
