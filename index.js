@@ -108,7 +108,7 @@ const shapes = {
       "isNationalCode",
       messageValidate("repeat"),
       (isNationalCode) =>
-        !persianform.isDuplicate(isNationalCode, { maxDuplicate: 5 })
+        !persianform.isDuplicate(isNationalCode, { maxDuplicate: 8 })
     ),
 
   isAddress: Yup.string()
